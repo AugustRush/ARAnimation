@@ -10,14 +10,42 @@ ARAnimation is an Core Animation library to make you animations easily.
 
 ## Example
 
+![](https://github.com/AugustRush/ARAnimation/blob/master/rotaion.gif)
+
 * Rotation
 
 ```
-[UIView AR_animationWithDuration:2 animations:^{
-        self.redView.layer.rotation = M_PI*2;
-        self.yellowView.layer.rotation = -M_PI*2;
-    } completion:animation1];
+ [UIView AR_animationWithDuration:1.0
+                          animations:^{
+                              self.redView.layer.rotation = 10;
+                              self.yellowView.layer.rotation = -10;
+                          }];
+
 ````
+
+*Scale
+```
+[UIView AR_animationWithDuration:1.0
+                          animations:^{
+                              self.redView.layer.scale = 2;
+                              self.yellowView.layer.scaleX = 1.5;
+     } completion:^{
+         //your code
+     }];
+```
+* Custom TmingFunction
+```
+ [UIView AR_animationWithDuration:2.0
+                               delay:1
+                              easing:^CGFloat(CGFloat timePercentage) {
+                                  return timePercentage * timePercentage;
+                              } animations:^{
+                                  self.redView.backgroundColor = [UIColor blackColor];
+                              } completion:^{
+                               //your code
+                              }];
+
+```
 
 ## Support Layer animatable propertys (version 0.5)
 * kARLayerPosition;
