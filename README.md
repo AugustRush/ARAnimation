@@ -1,5 +1,7 @@
 # ARAnimation
-*__ARAnimation is an Core Animation library to make you animations easily.__*
+
+*___ARAnimation is an Core Animation library to make you animations easily.___*
+
 
 ## Features (version 0.5)
 
