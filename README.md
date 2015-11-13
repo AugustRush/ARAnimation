@@ -3,49 +3,153 @@ ARAnimation is an Core Animation library to make you animations easily.
 
 ## Features (version 0.5)
 
-* Layer animations
-* Layer Spring Animations
-* Custom TimingFunction(easing funtion)
-* Official style block Animations
+* __Layer animations__
+* __Layer Spring Animations__
+* __Custom TimingFunction(easing funtion)__
+* __Official style block Animations__
 
-## Example
+# Usage
 
-![](https://github.com/AugustRush/ARAnimation/blob/master/rotaion.gif)
-
-* Rotation
+* Example1 (Rotation)
+-------------------
+ Basic:
+```
+ARBasicAnimation *rotationAnimation = [ARBasicAnimation animationWithKeyPath:kARLayerRotation];
+rotationAnimation.fromValue = @0;
+rotationAnimation.toValue = @10;
+[self.redView.layer addAnimation:rotationAnimation forKey:nil];
+[self.yellowView.layer addAnimation:rotationAnimation forKey:nil];
 
 ```
- [UIView AR_animationWithDuration:1.0
+Or easily:
+```
+[UIView AR_animationWithDuration:1.0
                           animations:^{
                               self.redView.layer.rotation = 10;
                               self.yellowView.layer.rotation = -10;
                           }];
 
+```
+
+* Other convenient methods
+------------------
+```
+// basic
++ (void)AR_animationWithDuration:(NSTimeInterval)duration
+                      animations:(void (^)(void))animations;
+---
++ (void)AR_animationWithDuration:(NSTimeInterval)duration
+                      animations:(void (^)(void))animations
+                      completion:(void (^)(void))completion;
+---
++ (void)AR_animationWithDuration:(NSTimeInterval)duration
+                           delay:(CFTimeInterval)delay
+                      animations:(void (^)(void))animations
+                      completion:(void (^)(void))completion;
+---
++ (void)AR_animationWithDuration:(NSTimeInterval)duration
+                           delay:(CFTimeInterval)delay
+                          easing:(AREasingCurve)easing
+                      animations:(void (^)(void))animations
+                      completion:(void (^)(void))completion;
+---
++ (void)AR_animationWithDuration:(NSTimeInterval)duration
+                           delay:(CFTimeInterval)delay
+                     repeatCount:(NSUInteger)repeatCount
+                    autoreverses:(BOOL)autoreverses
+                          easing:(AREasingCurve)easing
+                      animations:(void (^)(void))animations
+                      completion:(void (^)(void))completion;
+```
+----------------------------------------
+
+```
+// spring
++ (void)AR_springAnimationWithDuration:(NSTimeInterval)duration
+                            animations:(void (^)(void))animations;
+
++ (void)AR_springAnimationWithDuration:(NSTimeInterval)duration
+                            animations:(void (^)(void))animations
+                            completion:(void (^)(void))completion;
+
++ (void)AR_springAnimationWithDuration:(NSTimeInterval)duration
+                                 delay:(CFTimeInterval)delay
+                            animations:(void (^)(void))animations
+                            completion:(void (^)(void))completion;
+
++ (void)AR_springAnimationWithDuration:(NSTimeInterval)duration
+                                 delay:(CFTimeInterval)delay
+                                  mass:(CGFloat)mass
+                               damping:(CGFloat)damping
+                             stiffness:(CGFloat)stiffness
+                       initialVelocity:(CGFloat)initialVelocity
+                            animations:(void (^)(void))animations
+                            completion:(void (^)(void))completion;
+
++ (void)AR_springAnimationWithDuration:(NSTimeInterval)duration
+                                 delay:(CFTimeInterval)delay
+                           repeatCount:(NSUInteger)repeatCount
+                          autoreverses:(BOOL)autoreverses
+                                  mass:(CGFloat)mass
+                               damping:(CGFloat)damping
+                             stiffness:(CGFloat)stiffness
+                       initialVelocity:(CGFloat)initialVelocity
+                            animations:(void (^)(void))animations
+                            completion:(void (^)(void))completion;
+```
+
+## Example
+
+![](https://github.com/AugustRush/ARAnimation/blob/master/rotaion.gif)
+
+---------------------------------------
+
+```
+ void(^animation4)(void) = ^{
+        [self.view setNeedsLayout];
+        [UIView AR_animationWithDuration:0.5 delay:0.0 easing:kAREasingCurveBounceOut animations:^{
+            [self.view layoutIfNeeded];
+        } completion:^{
+            NSLog(@"all animations completion");
+        }];
+    };
+    
+    void(^animation3)(void) = ^{
+        [UIView AR_springAnimationWithDuration:1 animations:^{
+            self.redView.layer.scale = 2;
+            self.yellowView.layer.scale = 1;
+            self.redView.layer.position = CGPointMake(CGRectGetMidX(self.view.bounds), 250);
+            self.yellowView.layer.position = CGPointMake(CGRectGetMidX(self.view.bounds), 250);
+        } completion:animation4];
+    };
+    
+    void(^animation2)(void) = ^{
+        [UIView AR_springAnimationWithDuration:1.5 animations:^{
+            self.redView.layer.cornerRadius = CGRectGetMidX(self.redView.bounds);
+            self.yellowView.layer.cornerRadius = CGRectGetMidX(self.yellowView.bounds);
+        } completion:animation3];
+    };
+    
+    void(^animation1)(void) = ^{
+        [UIView AR_animationWithDuration:0.5 animations:^{
+            self.redView.layer.position = CGPointMake(CGRectGetMidX(self.view.bounds), 150);
+            self.yellowView.layer.position = CGPointMake(CGRectGetMidX(self.view.bounds), 150);
+            self.redView.layer.scaleX = 1.3;
+            self.yellowView.layer.scaleY = 1.3;
+        } completion:animation2];
+    };
+    
+    
+    [UIView AR_animationWithDuration:2 animations:^{
+        self.redView.backgroundColor = [self randomColor];
+        self.yellowView.backgroundColor = [self randomColor];
+        self.yellowView.alpha = 1;
+        
+        self.redView.layer.rotation = M_PI*4;
+        self.yellowView.layer.rotation = -M_PI*4;
+    } completion:animation1];
+
 ````
-
-*Scale
-```
-[UIView AR_animationWithDuration:1.0
-                          animations:^{
-                              self.redView.layer.scale = 2;
-                              self.yellowView.layer.scaleX = 1.5;
-     } completion:^{
-         //your code
-     }];
-```
-* Custom TmingFunction
-```
- [UIView AR_animationWithDuration:2.0
-                               delay:1
-                              easing:^CGFloat(CGFloat timePercentage) {
-                                  return timePercentage * timePercentage;
-                              } animations:^{
-                                  self.redView.backgroundColor = [UIColor blackColor];
-                              } completion:^{
-                               //your code
-                              }];
-
-```
 
 ## Support Layer animatable propertys (version 0.5)
 * kARLayerPosition;
@@ -64,3 +168,27 @@ ARAnimation is an Core Animation library to make you animations easily.
 * kARLayerRotationY;
 * kARLayerRotation;
 * kARLayerAnchorPoint;
+
+## Licence
+
+The MIT License (MIT)
+
+Copyright (c) 2015 August
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
