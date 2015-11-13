@@ -34,9 +34,19 @@
 
 - (IBAction)buttonClicked:(id)sender {
     [self multipleViewAnimations];
+    
+//    [self rotationAnimation];
 }
 
 #pragma mark - --
+
+- (void)rotationAnimation {
+    [UIView AR_animationWithDuration:1.0
+                          animations:^{
+                              self.redView.layer.rotation = 10;
+                              self.yellowView.layer.rotation = -10;
+                          }];
+}
 
 - (void)multipleViewAnimations {
     
