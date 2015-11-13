@@ -15,7 +15,14 @@
 		97287DA51BF590CD0045EF98 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97287DA31BF590CD0045EF98 /* LaunchScreen.storyboard */; };
 		97287DB01BF590CD0045EF98 /* ARAnimationDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 97287DAF1BF590CD0045EF98 /* ARAnimationDemoTests.m */; };
 		97287DBB1BF590CD0045EF98 /* ARAnimationDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 97287DBA1BF590CD0045EF98 /* ARAnimationDemoUITests.m */; };
-		97287DCC1BF5917E0045EF98 /* Source in Resources */ = {isa = PBXBuildFile; fileRef = 97287DCB1BF5917E0045EF98 /* Source */; };
+		97287DDE1BF5A6F00045EF98 /* BIAnimatableProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 97287DCE1BF5A6F00045EF98 /* BIAnimatableProperty.m */; };
+		97287DDF1BF5A6F00045EF98 /* BIAnimationFakeArray.m in Sources */ = {isa = PBXBuildFile; fileRef = 97287DD11BF5A6F00045EF98 /* BIAnimationFakeArray.m */; };
+		97287DE01BF5A6F00045EF98 /* BIBasicAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 97287DD31BF5A6F00045EF98 /* BIBasicAnimation.m */; };
+		97287DE11BF5A6F00045EF98 /* BIEasingCurveFunction.m in Sources */ = {isa = PBXBuildFile; fileRef = 97287DD51BF5A6F00045EF98 /* BIEasingCurveFunction.m */; };
+		97287DE21BF5A6F00045EF98 /* BIInterpolation.m in Sources */ = {isa = PBXBuildFile; fileRef = 97287DD71BF5A6F00045EF98 /* BIInterpolation.m */; };
+		97287DE31BF5A6F00045EF98 /* BISpringAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 97287DD91BF5A6F00045EF98 /* BISpringAnimation.m */; };
+		97287DE41BF5A6F00045EF98 /* CALayer+BIAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 97287DDB1BF5A6F00045EF98 /* CALayer+BIAnimation.m */; };
+		97287DE51BF5A6F00045EF98 /* UIView+BIAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 97287DDD1BF5A6F00045EF98 /* UIView+BIAnimation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +59,23 @@
 		97287DB61BF590CD0045EF98 /* ARAnimationDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ARAnimationDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		97287DBA1BF590CD0045EF98 /* ARAnimationDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ARAnimationDemoUITests.m; sourceTree = "<group>"; };
 		97287DBC1BF590CD0045EF98 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		97287DCB1BF5917E0045EF98 /* Source */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Source; sourceTree = "<group>"; };
+		97287DCD1BF5A6F00045EF98 /* BIAnimatableProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BIAnimatableProperty.h; path = Source/BIAnimatableProperty.h; sourceTree = SOURCE_ROOT; };
+		97287DCE1BF5A6F00045EF98 /* BIAnimatableProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BIAnimatableProperty.m; path = Source/BIAnimatableProperty.m; sourceTree = SOURCE_ROOT; };
+		97287DCF1BF5A6F00045EF98 /* BIAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BIAnimation.h; path = Source/BIAnimation.h; sourceTree = SOURCE_ROOT; };
+		97287DD01BF5A6F00045EF98 /* BIAnimationFakeArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BIAnimationFakeArray.h; path = Source/BIAnimationFakeArray.h; sourceTree = SOURCE_ROOT; };
+		97287DD11BF5A6F00045EF98 /* BIAnimationFakeArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BIAnimationFakeArray.m; path = Source/BIAnimationFakeArray.m; sourceTree = SOURCE_ROOT; };
+		97287DD21BF5A6F00045EF98 /* BIBasicAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BIBasicAnimation.h; path = Source/BIBasicAnimation.h; sourceTree = SOURCE_ROOT; };
+		97287DD31BF5A6F00045EF98 /* BIBasicAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BIBasicAnimation.m; path = Source/BIBasicAnimation.m; sourceTree = SOURCE_ROOT; };
+		97287DD41BF5A6F00045EF98 /* BIEasingCurveFunction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BIEasingCurveFunction.h; path = Source/BIEasingCurveFunction.h; sourceTree = SOURCE_ROOT; };
+		97287DD51BF5A6F00045EF98 /* BIEasingCurveFunction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BIEasingCurveFunction.m; path = Source/BIEasingCurveFunction.m; sourceTree = SOURCE_ROOT; };
+		97287DD61BF5A6F00045EF98 /* BIInterpolation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BIInterpolation.h; path = Source/BIInterpolation.h; sourceTree = SOURCE_ROOT; };
+		97287DD71BF5A6F00045EF98 /* BIInterpolation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BIInterpolation.m; path = Source/BIInterpolation.m; sourceTree = SOURCE_ROOT; };
+		97287DD81BF5A6F00045EF98 /* BISpringAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = BISpringAnimation.h; path = Source/BISpringAnimation.h; sourceTree = SOURCE_ROOT; };
+		97287DD91BF5A6F00045EF98 /* BISpringAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = BISpringAnimation.m; path = Source/BISpringAnimation.m; sourceTree = SOURCE_ROOT; };
+		97287DDA1BF5A6F00045EF98 /* CALayer+BIAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "CALayer+BIAnimation.h"; path = "Source/CALayer+BIAnimation.h"; sourceTree = SOURCE_ROOT; };
+		97287DDB1BF5A6F00045EF98 /* CALayer+BIAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "CALayer+BIAnimation.m"; path = "Source/CALayer+BIAnimation.m"; sourceTree = SOURCE_ROOT; };
+		97287DDC1BF5A6F00045EF98 /* UIView+BIAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+BIAnimation.h"; path = "Source/UIView+BIAnimation.h"; sourceTree = SOURCE_ROOT; };
+		97287DDD1BF5A6F00045EF98 /* UIView+BIAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+BIAnimation.m"; path = "Source/UIView+BIAnimation.m"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,7 +169,23 @@
 		97287DCA1BF591710045EF98 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				97287DCB1BF5917E0045EF98 /* Source */,
+				97287DCD1BF5A6F00045EF98 /* BIAnimatableProperty.h */,
+				97287DCE1BF5A6F00045EF98 /* BIAnimatableProperty.m */,
+				97287DCF1BF5A6F00045EF98 /* BIAnimation.h */,
+				97287DD01BF5A6F00045EF98 /* BIAnimationFakeArray.h */,
+				97287DD11BF5A6F00045EF98 /* BIAnimationFakeArray.m */,
+				97287DD21BF5A6F00045EF98 /* BIBasicAnimation.h */,
+				97287DD31BF5A6F00045EF98 /* BIBasicAnimation.m */,
+				97287DD41BF5A6F00045EF98 /* BIEasingCurveFunction.h */,
+				97287DD51BF5A6F00045EF98 /* BIEasingCurveFunction.m */,
+				97287DD61BF5A6F00045EF98 /* BIInterpolation.h */,
+				97287DD71BF5A6F00045EF98 /* BIInterpolation.m */,
+				97287DD81BF5A6F00045EF98 /* BISpringAnimation.h */,
+				97287DD91BF5A6F00045EF98 /* BISpringAnimation.m */,
+				97287DDA1BF5A6F00045EF98 /* CALayer+BIAnimation.h */,
+				97287DDB1BF5A6F00045EF98 /* CALayer+BIAnimation.m */,
+				97287DDC1BF5A6F00045EF98 /* UIView+BIAnimation.h */,
+				97287DDD1BF5A6F00045EF98 /* UIView+BIAnimation.m */,
 			);
 			name = Vendor;
 			sourceTree = "<group>";
@@ -257,7 +296,6 @@
 				97287DA51BF590CD0045EF98 /* LaunchScreen.storyboard in Resources */,
 				97287DA21BF590CD0045EF98 /* Assets.xcassets in Resources */,
 				97287DA01BF590CD0045EF98 /* Main.storyboard in Resources */,
-				97287DCC1BF5917E0045EF98 /* Source in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -282,9 +320,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97287DE01BF5A6F00045EF98 /* BIBasicAnimation.m in Sources */,
+				97287DE11BF5A6F00045EF98 /* BIEasingCurveFunction.m in Sources */,
 				97287D9D1BF590CD0045EF98 /* ViewController.m in Sources */,
 				97287D9A1BF590CD0045EF98 /* AppDelegate.m in Sources */,
 				97287D971BF590CD0045EF98 /* main.m in Sources */,
+				97287DE31BF5A6F00045EF98 /* BISpringAnimation.m in Sources */,
+				97287DE51BF5A6F00045EF98 /* UIView+BIAnimation.m in Sources */,
+				97287DDF1BF5A6F00045EF98 /* BIAnimationFakeArray.m in Sources */,
+				97287DE41BF5A6F00045EF98 /* CALayer+BIAnimation.m in Sources */,
+				97287DDE1BF5A6F00045EF98 /* BIAnimatableProperty.m in Sources */,
+				97287DE21BF5A6F00045EF98 /* BIInterpolation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -510,6 +556,7 @@
 				97287DC11BF590CD0045EF98 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		97287DC21BF590CD0045EF98 /* Build configuration list for PBXNativeTarget "ARAnimationDemoTests" */ = {
 			isa = XCConfigurationList;
@@ -518,6 +565,7 @@
 				97287DC41BF590CD0045EF98 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		97287DC51BF590CD0045EF98 /* Build configuration list for PBXNativeTarget "ARAnimationDemoUITests" */ = {
 			isa = XCConfigurationList;
@@ -526,6 +574,7 @@
 				97287DC71BF590CD0045EF98 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

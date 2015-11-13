@@ -15,7 +15,4 @@
 @property (nonatomic, assign) CGFloat stiffness;// > 0 deafault 100
 @property (nonatomic, assign) CGFloat initialVelocity; //default 0
 
-#warning need to impliment
-//@property (nonatomic, assign) CGFloat tension;
-
 @end

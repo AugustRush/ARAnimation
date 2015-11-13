@@ -7,7 +7,6 @@
 //
 
 #import "UIView+BIAnimation.h"
-#import "CATransaction+Perform.h"
 #import <objc/runtime.h>
 #import "BIBasicAnimation.h"
 #import "BISpringAnimation.h"

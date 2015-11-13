@@ -7,7 +7,6 @@
 //
 
 #import "CALayer+BIAnimation.h"
-#import "BIAnimationMaker.h"
 #import <objc/runtime.h>
 
 #import "BIAnimatableProperty.h"

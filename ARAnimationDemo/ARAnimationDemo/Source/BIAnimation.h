@@ -16,5 +16,7 @@ FOUNDATION_EXPORT NSString * BIAnimationVersionString[];
 
 #import "BIBasicAnimation.h"
 #import "BISpringAnimation.h"
+#import "CALayer+BIAnimation.h"
+#import "BIEasingCurveFunction.h"
 #import "UIView+BIAnimation.h"
 
