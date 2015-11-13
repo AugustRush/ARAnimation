@@ -1,5 +1,5 @@
 # ARAnimation
-ARAnimation is an Core Animation library to make you animations easily.
+*ARAnimation is an Core Animation library to make you animations easily.*
 
 ## Features (version 0.5)
 
@@ -107,7 +107,8 @@ Or easily:
 
 ![](https://github.com/AugustRush/ARAnimation/blob/master/rotaion.gif)
 
--------------------------------
+---------------------------------------
+
 ```
  void(^animation4)(void) = ^{
         [self.view setNeedsLayout];
