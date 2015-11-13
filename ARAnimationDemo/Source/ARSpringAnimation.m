@@ -1,17 +1,17 @@
 //
-//  BISpringAnimation.m
-//  BIAnimationDemo
+//  ARSpringAnimation.m
+//  ARAnimationDemo
 //
 //  Created by AugustRush on 15/10/20.
 //  Copyright © 2015年 AugustRush. All rights reserved.
 //
 
-#import "BISpringAnimation.h"
+#import "ARSpringAnimation.h"
 
-@implementation BISpringAnimation
+@implementation ARSpringAnimation
 
 + (instancetype)animationWithKeyPath:(NSString *)path {
-    BISpringAnimation *animation = [super animationWithKeyPath:path];
+    ARSpringAnimation *animation = [super animationWithKeyPath:path];
     animation.damping = 10;
     animation.initialVelocity = 0;
     animation.stiffness = 100;
@@ -25,7 +25,7 @@
     return kCAAnimationLinear;
 }
 
-- (BIEasingCurve)easing {
+- (AREasingCurve)easing {
     
     CGFloat b = self.damping;
     CGFloat m = self.mass;
@@ -74,7 +74,7 @@
 }
 
 - (id)copyWithZone:(NSZone *)zone {
-    BISpringAnimation *copy = [super copyWithZone:zone];
+    ARSpringAnimation *copy = [super copyWithZone:zone];
     copy->_damping = _damping;
     copy->_stiffness = _stiffness;
     copy->_mass = _mass;

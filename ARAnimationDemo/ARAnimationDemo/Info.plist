@@ -26,7 +26,7 @@
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>Main</string>
-	<key>UIRequiredDeviceCapabilities</key>
+	<key>UIRequiredDeviceCapaARlities</key>
 	<array>
 		<string>armv7</string>
 	</array>

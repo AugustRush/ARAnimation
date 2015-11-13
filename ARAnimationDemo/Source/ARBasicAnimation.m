@@ -1,26 +1,26 @@
 //
-//  BIBasicAnimation.m
-//  BIAnimationDemo
+//  ARBasicAnimation.m
+//  ARAnimationDemo
 //
 //  Created by AugustRush on 15/10/19.
 //  Copyright © 2015年 AugustRush. All rights reserved.
 //
 
-#import "BIBasicAnimation.h"
-#import "BIAnimatableProperty.h"
-#import "BIAnimationFakeArray.h"
+#import "ARBasicAnimation.h"
+#import "ARAnimatableProperty.h"
+#import "ARAnimationFakeArray.h"
 
-@interface BIBasicAnimation ()
+@interface ARBasicAnimation ()
 
-@property (nonatomic, copy) BIInterpolation interpolation;
+@property (nonatomic, copy) ARInterpolation interpolation;
 
 @end
 
-@implementation BIBasicAnimation
+@implementation ARBasicAnimation
 
 + (instancetype)animationWithKeyPath:(NSString *)path {
-    BIBasicAnimation *animation = [super animationWithKeyPath:path];
-    animation.easing = kBIEasingCurveLinear;
+    ARBasicAnimation *animation = [super animationWithKeyPath:path];
+    animation.easing = kAREasingCurveLinear;
     animation.duration = 0.25;
     animation.interpolation = InterpolationForKeyPath(path);
     return animation;
@@ -34,11 +34,11 @@
     NSUInteger frames = self.duration * 60;
     
     //just create a fake array
-    return [BIAnimationFakeArray arrayWithCount:frames interpolation:_interpolation from:_fromValue to:_toValue easing:_easing];
+    return [ARAnimationFakeArray arrayWithCount:frames interpolation:_interpolation from:_fromValue to:_toValue easing:_easing];
 }
 
 - (id)copyWithZone:(NSZone *)zone {
-    BIBasicAnimation *copy = [super copyWithZone:zone];
+    ARBasicAnimation *copy = [super copyWithZone:zone];
     copy->_fromValue = _fromValue;
     copy->_toValue = _toValue;
     copy->_easing = _easing;

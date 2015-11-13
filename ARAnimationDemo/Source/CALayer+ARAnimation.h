@@ -1,6 +1,6 @@
 //
-//  CALayer+BIAnimation.h
-//  BIAnimationDemo
+//  CALayer+ARAnimation.h
+//  ARAnimationDemo
 //
 //  Created by AugustRush on 15/10/23.
 //  Copyright © 2015年 AugustRush. All rights reserved.
@@ -9,8 +9,8 @@
 #import <QuartzCore/QuartzCore.h>
 #import <UIKit/UIKit.h>
 
-@class BIAnimationMaker;
-@interface CALayer (BIAnimation)
+@class ARAnimationMaker;
+@interface CALayer (ARAnimation)
 
 @property (nonatomic, assign) CGFloat scaleX;
 @property (nonatomic, assign) CGFloat scaleY;

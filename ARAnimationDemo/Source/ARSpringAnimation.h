@@ -1,14 +1,14 @@
 //
-//  BISpringAnimation.h
-//  BIAnimationDemo
+//  ARSpringAnimation.h
+//  ARAnimationDemo
 //
 //  Created by AugustRush on 15/10/20.
 //  Copyright © 2015年 AugustRush. All rights reserved.
 //
 
-#import "BIBasicAnimation.h"
+#import "ARBasicAnimation.h"
 
-@interface BISpringAnimation : BIBasicAnimation
+@interface ARSpringAnimation : ARBasicAnimation
 
 @property (nonatomic, assign) CGFloat damping;// > 0 default 10
 @property (nonatomic, assign) CGFloat mass;// > 0 default 1

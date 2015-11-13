@@ -1,27 +1,27 @@
 //
-//  BIAnimationLazyArray.m
-//  BIAnimationDemo
+//  ARAnimationLazyArray.m
+//  ARAnimationDemo
 //
 //  Created by AugustRush on 15/10/20.
 //  Copyright © 2015年 AugustRush. All rights reserved.
 //
 
-#import "BIAnimationFakeArray.h"
+#import "ARAnimationFakeArray.h"
 
-@interface BIAnimationFakeArray ()
+@interface ARAnimationFakeArray ()
 
 @property (nonatomic, assign) NSUInteger fakeCount;
-@property (nonatomic, copy) BIInterpolation interpolation;
+@property (nonatomic, copy) ARInterpolation interpolation;
 @property (nonatomic, weak) id from;
 @property (nonatomic, weak) id to;
-@property (nonatomic, copy) BIEasingCurve easing;
+@property (nonatomic, copy) AREasingCurve easing;
 
 @end
 
-@implementation BIAnimationFakeArray
+@implementation ARAnimationFakeArray
 
-+ (instancetype)arrayWithCount:(NSUInteger)count interpolation:(BIInterpolation)interpolation from:(id)from to:(id)to easing:(BIEasingCurve)easing {
-    BIAnimationFakeArray *array = [[super alloc] init];
++ (instancetype)arrayWithCount:(NSUInteger)count interpolation:(ARInterpolation)interpolation from:(id)from to:(id)to easing:(AREasingCurve)easing {
+    ARAnimationFakeArray *array = [[super alloc] init];
     array->_fakeCount = count;
     array->_interpolation = [interpolation copy];
     array->_easing = [easing copy];

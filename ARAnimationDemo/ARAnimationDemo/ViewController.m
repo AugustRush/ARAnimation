@@ -7,7 +7,7 @@
 //
 
 #import "ViewController.h"
-#import "Source/BIAnimation.h"
+#import "ARAnimation.h"
 
 @interface ViewController ()
 
@@ -42,7 +42,7 @@
     
     void(^animation4)(void) = ^{
         [self.view setNeedsLayout];
-        [UIView bi_animationWithDuration:0.5 delay:0.0 easing:kBIEasingCurveBounceOut animations:^{
+        [UIView AR_animationWithDuration:0.5 delay:0.0 easing:kAREasingCurveBounceOut animations:^{
             [self.view layoutIfNeeded];
         } completion:^{
             NSLog(@"all animations completion");
@@ -50,7 +50,7 @@
     };
     
     void(^animation3)(void) = ^{
-        [UIView bi_springAnimationWithDuration:1 animations:^{
+        [UIView AR_springAnimationWithDuration:1 animations:^{
             self.redView.layer.scale = 2;
             self.yellowView.layer.scale = 1;
             self.redView.layer.position = CGPointMake(CGRectGetMidX(self.view.bounds), 250);
@@ -59,14 +59,14 @@
     };
     
     void(^animation2)(void) = ^{
-        [UIView bi_springAnimationWithDuration:1.5 animations:^{
+        [UIView AR_springAnimationWithDuration:1.5 animations:^{
             self.redView.layer.cornerRadius = CGRectGetMidX(self.redView.bounds);
             self.yellowView.layer.cornerRadius = CGRectGetMidX(self.yellowView.bounds);
         } completion:animation3];
     };
     
     void(^animation1)(void) = ^{
-        [UIView bi_animationWithDuration:0.5 animations:^{
+        [UIView AR_animationWithDuration:0.5 animations:^{
             self.redView.layer.position = CGPointMake(CGRectGetMidX(self.view.bounds), 150);
             self.yellowView.layer.position = CGPointMake(CGRectGetMidX(self.view.bounds), 150);
             self.redView.layer.scaleX = 1.3;
@@ -75,7 +75,7 @@
     };
     
     
-    [UIView bi_animationWithDuration:2 animations:^{
+    [UIView AR_animationWithDuration:2 animations:^{
         self.redView.backgroundColor = [self randomColor];
         self.yellowView.backgroundColor = [self randomColor];
         self.yellowView.alpha = 1;

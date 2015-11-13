@@ -1,43 +1,43 @@
 //
-//  BIEasingCurveFunction.m
-//  BIAnimationDemo
+//  AREasingCurveFunction.m
+//  ARAnimationDemo
 //
 //  Created by AugustRush on 15/10/19.
 //  Cotyright © 2015年 AugustRush. All rights reserved.
 //
 
-#import "BIEasingCurveFunction.h"
+#import "AREasingCurveFunction.h"
 
-BIEasingCurve const kBIEasingCurveLinear = ^CGFloat(CGFloat t){
+AREasingCurve const kAREasingCurveLinear = ^CGFloat(CGFloat t){
     return t;
 };
 
-BIEasingCurve const kBIEasingCurveQuadratic = ^CGFloat(CGFloat t){
+AREasingCurve const kAREasingCurveQuadratic = ^CGFloat(CGFloat t){
     return t * t;
 };
 
-BIEasingCurve const kBIEasingCurveCubic = ^CGFloat(CGFloat t){
+AREasingCurve const kAREasingCurveCuARc = ^CGFloat(CGFloat t){
     return t * t * t;
 };
 
-BIEasingCurve const kBIEasingCurveQuartic = ^CGFloat(CGFloat t){
+AREasingCurve const kAREasingCurveQuartic = ^CGFloat(CGFloat t){
     return t * t * t * t;
 };
 
-BIEasingCurve const kBIEasingCurveSine = ^CGFloat(CGFloat t){
+AREasingCurve const kAREasingCurveSine = ^CGFloat(CGFloat t){
     return sin((t - 1) * M_PI_2) + 1;
 };
 
-BIEasingCurve const kBIEasingCurveBackEaseIn = ^CGFloat(CGFloat t){
+AREasingCurve const kAREasingCurveBackEaseIn = ^CGFloat(CGFloat t){
     return t * t * t - t * sin(t * M_PI);
 };
 
-BIEasingCurve const kBIEasingCurveBackEaseOut = ^CGFloat(CGFloat t){
+AREasingCurve const kAREasingCurveBackEaseOut = ^CGFloat(CGFloat t){
     CGFloat f = (1 - t);
     return 1 - (f * f * f - f * sin(f * M_PI));
 };
 
-BIEasingCurve const kBIEasingCurveBackEaseInOut = ^CGFloat(CGFloat t){
+AREasingCurve const kAREasingCurveBackEaseInOut = ^CGFloat(CGFloat t){
     if(t < 0.5)
     {
         CGFloat f = 2 * t;
@@ -50,7 +50,7 @@ BIEasingCurve const kBIEasingCurveBackEaseInOut = ^CGFloat(CGFloat t){
     }
 };
 
-BIEasingCurve const kBIEasingCurveBounceOut = ^CGFloat(CGFloat t){
+AREasingCurve const kAREasingCurveBounceOut = ^CGFloat(CGFloat t){
     if(t < 4/11.0){
         return (121 * t * t)/16.0;
     } else if(t < 8/11.0){
@@ -62,17 +62,17 @@ BIEasingCurve const kBIEasingCurveBounceOut = ^CGFloat(CGFloat t){
     }
 };
 
-BIEasingCurve const kBIEasingCurveBounceIn = ^CGFloat(CGFloat t){
-    return 1 - kBIEasingCurveBounceOut(1 - t);
+AREasingCurve const kAREasingCurveBounceIn = ^CGFloat(CGFloat t){
+    return 1 - kAREasingCurveBounceOut(1 - t);
 };
 
-BIEasingCurve const kBIEasingCurveBounceInOut = ^CGFloat(CGFloat t){
+AREasingCurve const kAREasingCurveBounceInOut = ^CGFloat(CGFloat t){
     if(t < 0.5)
     {
-        return 0.5 * kBIEasingCurveBounceIn(t*2);
+        return 0.5 * kAREasingCurveBounceIn(t*2);
     }
     else
     {
-        return 0.5 * kBIEasingCurveBounceOut(t * 2 - 1) + 0.5;
+        return 0.5 * kAREasingCurveBounceOut(t * 2 - 1) + 0.5;
     }
 };

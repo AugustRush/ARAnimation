@@ -1,25 +1,25 @@
 //
-//  UIView+BIAnimation.m
-//  BIAnimationDemo
+//  UIView+ARAnimation.m
+//  ARAnimationDemo
 //
 //  Created by AugustRush on 15/10/21.
 //  Copyright © 2015年 AugustRush. All rights reserved.
 //
 
-#import "UIView+BIAnimation.h"
+#import "UIView+ARAnimation.h"
 #import <objc/runtime.h>
-#import "BIBasicAnimation.h"
-#import "BISpringAnimation.h"
+#import "ARBasicAnimation.h"
+#import "ARSpringAnimation.h"
 
-static void *bi_currentAnimationContext = NULL;
-static void *bi_animationContext = &bi_animationContext;
+static void *AR_currentAnimationContext = NULL;
+static void *AR_animationContext = &AR_animationContext;
 
-NSString *const kBIBlockAnimationContextKey = @"kBIBlockAnimationContextKey";
+NSString *const kARBlockAnimationContextKey = @"kARBlockAnimationContextKey";
 
 /**
  *  @brief  info
  */
-@interface BIAnimationInfo : NSObject
+@interface ARAnimationInfo : NSObject
 
 @property(nonatomic, weak) CALayer *layer;
 @property(nonatomic, copy) NSString *event;
@@ -27,22 +27,22 @@ NSString *const kBIBlockAnimationContextKey = @"kBIBlockAnimationContextKey";
 
 @end
 
-@implementation BIAnimationInfo
+@implementation ARAnimationInfo
 
 @end
 
 /**
  *  @brief  context
  */
-@interface BIBlockAnimationContext : NSObject
+@interface ARBlockAnimationContext : NSObject
 
 @property(nonatomic, assign) CFTimeInterval delay;
 @property(nonatomic, strong, readonly)
-    NSMutableArray<BIAnimationInfo *> *animationInfos;
+    NSMutableArray<ARAnimationInfo *> *animationInfos;
 
 @end
 
-@implementation BIBlockAnimationContext
+@implementation ARBlockAnimationContext
 
 - (instancetype)init {
   self = [super init];
@@ -54,7 +54,7 @@ NSString *const kBIBlockAnimationContextKey = @"kBIBlockAnimationContextKey";
 
 @end
 
-@implementation UIView (BIAnimation)
+@implementation UIView (ARAnimation)
 
 #pragma mark - swizzle methods
 
@@ -67,7 +67,7 @@ NSString *const kBIBlockAnimationContextKey = @"kBIBlockAnimationContextKey";
 
 + (void)swizzleMethods {
   SEL originalSelector = @selector(actionForLayer:forKey:);
-  SEL extendedSelector = @selector(bi_actionForLayer:forKey:);
+  SEL extendedSelector = @selector(AR_actionForLayer:forKey:);
 
   Method originalMethod = class_getInstanceMethod(self, originalSelector);
   Method extendedMethod = class_getInstanceMethod(self, extendedSelector);
@@ -83,16 +83,16 @@ NSString *const kBIBlockAnimationContextKey = @"kBIBlockAnimationContextKey";
   }
 }
 
-- (id<CAAction>)bi_actionForLayer:(CALayer *)layer forKey:(NSString *)event {
-  if (bi_currentAnimationContext == bi_animationContext) {
+- (id<CAAction>)AR_actionForLayer:(CALayer *)layer forKey:(NSString *)event {
+  if (AR_currentAnimationContext == AR_animationContext) {
     //        NSLog(@"event is %@",event);
-    if ([BIAllAnimatablePropertys() containsObject:event]) {
-      BIBlockAnimationContext *context =
-          [CATransaction valueForKey:kBIBlockAnimationContextKey];
-      BIAnimationInfo *info = [[BIAnimationInfo alloc] init];
+    if ([ARAllAnimatablePropertys() containsObject:event]) {
+      ARBlockAnimationContext *context =
+          [CATransaction valueForKey:kARBlockAnimationContextKey];
+      ARAnimationInfo *info = [[ARAnimationInfo alloc] init];
       info.layer = layer;
       info.event = event;
-      if ([event isEqualToString:kBILayerBackgroundColor]) {
+      if ([event isEqualToString:kARLayerBackgroundColor]) {
         CGColorRef from = (__bridge CGColorRef)([layer valueForKeyPath:event]);
         info.fromValue = [UIColor colorWithCGColor:from];
       } else {
@@ -105,42 +105,42 @@ NSString *const kBIBlockAnimationContextKey = @"kBIBlockAnimationContextKey";
     return (id<CAAction>)[NSNull null];
   }
 
-  return [self bi_actionForLayer:layer forKey:event];
+  return [self AR_actionForLayer:layer forKey:event];
 }
 
 #pragma mark - public methods
 
-+ (void)bi_animationWithDuration:(NSTimeInterval)duration
++ (void)AR_animationWithDuration:(NSTimeInterval)duration
                       animations:(void (^)(void))animations {
-  [self bi_animationWithDuration:duration animations:animations completion:nil];
+  [self AR_animationWithDuration:duration animations:animations completion:nil];
 }
 
-+ (void)bi_animationWithDuration:(NSTimeInterval)duration
++ (void)AR_animationWithDuration:(NSTimeInterval)duration
                       animations:(void (^)(void))animations
                       completion:(void (^)(void))completion {
-  [self bi_animationWithDuration:duration
+  [self AR_animationWithDuration:duration
                            delay:0
                       animations:animations
                       completion:completion];
 }
 
-+ (void)bi_animationWithDuration:(NSTimeInterval)duration
++ (void)AR_animationWithDuration:(NSTimeInterval)duration
                            delay:(CFTimeInterval)delay
                       animations:(void (^)(void))animations
                       completion:(void (^)(void))completion {
-  [self bi_animationWithDuration:duration
+  [self AR_animationWithDuration:duration
                            delay:delay
-                          easing:kBIEasingCurveLinear
+                          easing:kAREasingCurveLinear
                       animations:animations
                       completion:completion];
 }
 
-+ (void)bi_animationWithDuration:(NSTimeInterval)duration
++ (void)AR_animationWithDuration:(NSTimeInterval)duration
                            delay:(CFTimeInterval)delay
-                          easing:(BIEasingCurve)easing
+                          easing:(AREasingCurve)easing
                       animations:(void (^)(void))animations
                       completion:(void (^)(void))completion {
-  [self bi_animationWithDuration:duration
+  [self AR_animationWithDuration:duration
                            delay:delay
                      repeatCount:0
                     autoreverses:NO
@@ -149,11 +149,11 @@ NSString *const kBIBlockAnimationContextKey = @"kBIBlockAnimationContextKey";
                       completion:completion];
 }
 
-+ (void)bi_animationWithDuration:(NSTimeInterval)duration
++ (void)AR_animationWithDuration:(NSTimeInterval)duration
                            delay:(CFTimeInterval)delay
                      repeatCount:(NSUInteger)repeatCount
                     autoreverses:(BOOL)autoreverses
-                          easing:(BIEasingCurve)easing
+                          easing:(AREasingCurve)easing
                       animations:(void (^)(void))animations
                       completion:(void (^)(void))completion {
   [CATransaction lock];
@@ -161,12 +161,12 @@ NSString *const kBIBlockAnimationContextKey = @"kBIBlockAnimationContextKey";
   [CATransaction setDisableActions:NO];
   [CATransaction setCompletionBlock:completion];
 
-  bi_currentAnimationContext = bi_animationContext;
-  BIBlockAnimationContext *context = [[BIBlockAnimationContext alloc] init];
+  AR_currentAnimationContext = AR_animationContext;
+  ARBlockAnimationContext *context = [[ARBlockAnimationContext alloc] init];
   context.delay = delay;
-  [CATransaction setValue:context forKey:kBIBlockAnimationContextKey];
+  [CATransaction setValue:context forKey:kARBlockAnimationContextKey];
   animations();
-  bi_currentAnimationContext = NULL;
+  AR_currentAnimationContext = NULL;
   [self addBasicAnimationsWithContext:context
                                easing:easing
                              duration:duration
@@ -177,27 +177,27 @@ NSString *const kBIBlockAnimationContextKey = @"kBIBlockAnimationContextKey";
   [CATransaction unlock];
 }
 
-+ (void)bi_springAnimationWithDuration:(NSTimeInterval)duration
++ (void)AR_springAnimationWithDuration:(NSTimeInterval)duration
                             animations:(void (^)(void))animations {
-  [self bi_springAnimationWithDuration:duration
+  [self AR_springAnimationWithDuration:duration
                             animations:animations
                             completion:nil];
 }
 
-+ (void)bi_springAnimationWithDuration:(NSTimeInterval)duration
++ (void)AR_springAnimationWithDuration:(NSTimeInterval)duration
                             animations:(void (^)(void))animations
                             completion:(void (^)(void))completion {
-  [self bi_springAnimationWithDuration:duration
+  [self AR_springAnimationWithDuration:duration
                                  delay:0.0
                             animations:animations
                             completion:completion];
 }
 
-+ (void)bi_springAnimationWithDuration:(NSTimeInterval)duration
++ (void)AR_springAnimationWithDuration:(NSTimeInterval)duration
                                  delay:(CFTimeInterval)delay
                             animations:(void (^)(void))animations
                             completion:(void (^)(void))completion {
-  [self bi_springAnimationWithDuration:duration
+  [self AR_springAnimationWithDuration:duration
                                  delay:delay
                                   mass:1
                                damping:10
@@ -207,7 +207,7 @@ NSString *const kBIBlockAnimationContextKey = @"kBIBlockAnimationContextKey";
                             completion:completion];
 }
 
-+ (void)bi_springAnimationWithDuration:(NSTimeInterval)duration
++ (void)AR_springAnimationWithDuration:(NSTimeInterval)duration
                                  delay:(CFTimeInterval)delay
                                   mass:(CGFloat)mass
                                damping:(CGFloat)damping
@@ -215,7 +215,7 @@ NSString *const kBIBlockAnimationContextKey = @"kBIBlockAnimationContextKey";
                        initialVelocity:(CGFloat)initialVelocity
                             animations:(void (^)(void))animations
                             completion:(void (^)(void))completion {
-  [self bi_springAnimationWithDuration:duration
+  [self AR_springAnimationWithDuration:duration
                                  delay:delay
                            repeatCount:0
                           autoreverses:NO
@@ -227,7 +227,7 @@ NSString *const kBIBlockAnimationContextKey = @"kBIBlockAnimationContextKey";
                             completion:completion];
 }
 
-+ (void)bi_springAnimationWithDuration:(NSTimeInterval)duration
++ (void)AR_springAnimationWithDuration:(NSTimeInterval)duration
                                  delay:(CFTimeInterval)delay
                            repeatCount:(NSUInteger)repeatCount
                           autoreverses:(BOOL)autoreverses
@@ -242,12 +242,12 @@ NSString *const kBIBlockAnimationContextKey = @"kBIBlockAnimationContextKey";
   [CATransaction setDisableActions:NO];
   [CATransaction setCompletionBlock:completion];
 
-  bi_currentAnimationContext = bi_animationContext;
-  BIBlockAnimationContext *context = [[BIBlockAnimationContext alloc] init];
+  AR_currentAnimationContext = AR_animationContext;
+  ARBlockAnimationContext *context = [[ARBlockAnimationContext alloc] init];
   context.delay = delay;
-  [CATransaction setValue:context forKey:kBIBlockAnimationContextKey];
+  [CATransaction setValue:context forKey:kARBlockAnimationContextKey];
   animations();
-  bi_currentAnimationContext = NULL;
+  AR_currentAnimationContext = NULL;
   [self addSpringAnimationsWithContext:context
                               duration:duration
                                   mass:mass
@@ -263,19 +263,19 @@ NSString *const kBIBlockAnimationContextKey = @"kBIBlockAnimationContextKey";
 
 #pragma mark - private methods
 
-+ (void)addBasicAnimationsWithContext:(BIBlockAnimationContext *)context
-                               easing:(BIEasingCurve)easing
++ (void)addBasicAnimationsWithContext:(ARBlockAnimationContext *)context
+                               easing:(AREasingCurve)easing
                              duration:(CFTimeInterval)duration
                           repeatCount:(NSUInteger)repeatCount
                          autoreverses:(BOOL)autoreverses {
   [context.animationInfos
-      enumerateObjectsUsingBlock:^(BIAnimationInfo *_Nonnull info,
+      enumerateObjectsUsingBlock:^(ARAnimationInfo *_Nonnull info,
                                    NSUInteger idx, BOOL *_Nonnull stop) {
-        BIBasicAnimation *basic =
-            [BIBasicAnimation animationWithKeyPath:info.event];
+        ARBasicAnimation *basic =
+            [ARBasicAnimation animationWithKeyPath:info.event];
         basic.fromValue = info.fromValue;
-          NSString *key = BILayerActionEventStoreKey(info.event);
-        if ([info.event isEqualToString:kBILayerBackgroundColor]) {
+          NSString *key = ARLayerActionEventStoreKey(info.event);
+        if ([info.event isEqualToString:kARLayerBackgroundColor]) {
           CGColorRef color =
               (__bridge CGColorRef)([info.layer valueForKeyPath:key]);
           basic.toValue = [UIColor colorWithCGColor:color];
@@ -293,7 +293,7 @@ NSString *const kBIBlockAnimationContextKey = @"kBIBlockAnimationContextKey";
       }];
 }
 
-+ (void)addSpringAnimationsWithContext:(BIBlockAnimationContext *)context
++ (void)addSpringAnimationsWithContext:(ARBlockAnimationContext *)context
                               duration:(CFTimeInterval)duration
                                   mass:(CGFloat)mass
                                damping:(CGFloat)damping
@@ -303,13 +303,13 @@ NSString *const kBIBlockAnimationContextKey = @"kBIBlockAnimationContextKey";
                           autoreverses:(BOOL)autoreverses {
 
   [context.animationInfos
-      enumerateObjectsUsingBlock:^(BIAnimationInfo *_Nonnull info,
+      enumerateObjectsUsingBlock:^(ARAnimationInfo *_Nonnull info,
                                    NSUInteger idx, BOOL *_Nonnull stop) {
-        BISpringAnimation *spring =
-            [BISpringAnimation animationWithKeyPath:info.event];
+        ARSpringAnimation *spring =
+            [ARSpringAnimation animationWithKeyPath:info.event];
         spring.fromValue = info.fromValue;
-          NSString *key = BILayerActionEventStoreKey(info.event);
-        if ([info.event isEqualToString:kBILayerBackgroundColor]) {
+          NSString *key = ARLayerActionEventStoreKey(info.event);
+        if ([info.event isEqualToString:kARLayerBackgroundColor]) {
           CGColorRef color =
               (__bridge CGColorRef)([info.layer valueForKeyPath:key]);
           spring.toValue = [UIColor colorWithCGColor:color];

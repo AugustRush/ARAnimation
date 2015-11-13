@@ -1,32 +1,32 @@
 //
-//  BIAnimatableProperty.m
-//  BIAnimationDemo
+//  ARAnimatableProperty.m
+//  ARAnimationDemo
 //
 //  Created by AugustRush on 15/10/19.
 //  Copyright © 2015年 AugustRush. All rights reserved.
 //
 
-#import "BIAnimatableProperty.h"
+#import "ARAnimatableProperty.h"
 
-NSString * const kBILayerPosition = @"position";
-NSString * const kBILayerPositionX = @"position.x";
-NSString * const kBILayerPositionY = @"position.y";
-NSString * const kBILayerCornerRadius = @"cornerRadius";
-NSString * const kBILayerZPositoin = @"zPosition";
-NSString * const kBILayerScaleX = @"transform.scale.x";
-NSString * const kBILayerScaleY = @"transform.scale.y";
-NSString * const kBILayerScale = @"transform.scale";
-NSString * const kBILayerBorderWidth = @"borderWidth";
-NSString * const kBILayerBounds = @"bounds";
-NSString * const kBILayerBackgroundColor = @"backgroundColor";
-NSString * const kBILayerOpacity = @"opacity";
-NSString * const kBILayerRotationX = @"transform.rotation.x";
-NSString * const kBILayerRotationY = @"transform.rotation.y";
-NSString * const kBILayerRotation = @"transform.rotation";
-NSString * const kBILayerAnchorPoint = @"anchorPoint";
+NSString * const kARLayerPosition = @"position";
+NSString * const kARLayerPositionX = @"position.x";
+NSString * const kARLayerPositionY = @"position.y";
+NSString * const kARLayerCornerRadius = @"cornerRadius";
+NSString * const kARLayerZPositoin = @"zPosition";
+NSString * const kARLayerScaleX = @"transform.scale.x";
+NSString * const kARLayerScaleY = @"transform.scale.y";
+NSString * const kARLayerScale = @"transform.scale";
+NSString * const kARLayerBorderWidth = @"borderWidth";
+NSString * const kARLayerBounds = @"bounds";
+NSString * const kARLayerBackgroundColor = @"backgroundColor";
+NSString * const kARLayerOpacity = @"opacity";
+NSString * const kARLayerRotationX = @"transform.rotation.x";
+NSString * const kARLayerRotationY = @"transform.rotation.y";
+NSString * const kARLayerRotation = @"transform.rotation";
+NSString * const kARLayerAnchorPoint = @"anchorPoint";
 
 
-NSArray *BIAllAnimatablePropertys() {
+NSArray *ARAllAnimatablePropertys() {
     return @[@"position",
              @"position.x",
              @"position.y",
@@ -45,7 +45,7 @@ NSArray *BIAllAnimatablePropertys() {
              @"anchorPoint"];
 }
 
-NSString *BILayerActionEventStoreKey(NSString *event) {
+NSString *ARLayerActionEventStoreKey(NSString *event) {
     static NSDictionary *dict = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
