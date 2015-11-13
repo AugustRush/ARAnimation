@@ -41,20 +41,20 @@
 #pragma mark - --
 
 - (void)rotationAnimation {
+    
+    ARBasicAnimation *rotationAnimation = [ARBasicAnimation animationWithKeyPath:kARLayerRotation];
+    rotationAnimation.fromValue = @0;
+    rotationAnimation.toValue = @10;
+    [self.redView.layer addAnimation:rotationAnimation forKey:nil];
+    [self.yellowView.layer addAnimation:rotationAnimation forKey:nil];
+    
     [UIView AR_animationWithDuration:1.0
                           animations:^{
                               self.redView.layer.rotation = 10;
                               self.yellowView.layer.rotation = -10;
                           }];
-    
-    [UIView AR_animationWithDuration:1.0
-                          animations:^{
-                              self.redView.layer.scale = 2;
-                              self.yellowView.layer.scaleX = 1.5;
-     } completion:^{
-         
-     }];
-    
+   
+   
     [UIView AR_animationWithDuration:2.0
                                delay:1
                               easing:^CGFloat(CGFloat timePercentage) {
