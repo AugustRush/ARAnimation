@@ -36,7 +36,7 @@ Or easily:
 * Other convenient methods
 ------------------
 ```
-// basic
+**// basic
 + (void)AR_animationWithDuration:(NSTimeInterval)duration
                       animations:(void (^)(void))animations;
 ---
@@ -67,11 +67,12 @@ Or easily:
                           easing:(AREasingCurve)easing
                       animations:(void (^)(void))animations
                       completion:(void (^)(void))completion;
+**
 ```
 ----------------------------------------
 
 ```
-// spring
+**// spring
 + (void)AR_springAnimationWithDuration:(NSTimeInterval)duration
                             animations:(void (^)(void))animations;
 
@@ -103,6 +104,7 @@ Or easily:
                        initialVelocity:(CGFloat)initialVelocity
                             animations:(void (^)(void))animations
                             completion:(void (^)(void))completion;
+**
 ```
 
 ## Example
