@@ -169,25 +169,49 @@
 		97287DCA1BF591710045EF98 /* Vendor */ = {
 			isa = PBXGroup;
 			children = (
-				97287DCD1BF5A6F00045EF98 /* ARAnimatableProperty.h */,
-				97287DCE1BF5A6F00045EF98 /* ARAnimatableProperty.m */,
 				97287DCF1BF5A6F00045EF98 /* ARAnimation.h */,
-				97287DD01BF5A6F00045EF98 /* ARAnimationFakeArray.h */,
-				97287DD11BF5A6F00045EF98 /* ARAnimationFakeArray.m */,
+				97287DE81BF5A99C0045EF98 /* Category */,
+				97287DE71BF5A97A0045EF98 /* Private */,
+				97287DE61BF5A9500045EF98 /* Animations */,
+			);
+			name = Vendor;
+			sourceTree = "<group>";
+		};
+		97287DE61BF5A9500045EF98 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
 				97287DD21BF5A6F00045EF98 /* ARBasicAnimation.h */,
 				97287DD31BF5A6F00045EF98 /* ARBasicAnimation.m */,
-				97287DD41BF5A6F00045EF98 /* AREasingCurveFunction.h */,
-				97287DD51BF5A6F00045EF98 /* AREasingCurveFunction.m */,
-				97287DD61BF5A6F00045EF98 /* ARInterpolation.h */,
-				97287DD71BF5A6F00045EF98 /* ArInterpolation.m */,
 				97287DD81BF5A6F00045EF98 /* ARSpringAnimation.h */,
 				97287DD91BF5A6F00045EF98 /* ARSpringAnimation.m */,
+			);
+			name = Animations;
+			sourceTree = "<group>";
+		};
+		97287DE71BF5A97A0045EF98 /* Private */ = {
+			isa = PBXGroup;
+			children = (
+				97287DCD1BF5A6F00045EF98 /* ARAnimatableProperty.h */,
+				97287DCE1BF5A6F00045EF98 /* ARAnimatableProperty.m */,
+				97287DD41BF5A6F00045EF98 /* AREasingCurveFunction.h */,
+				97287DD51BF5A6F00045EF98 /* AREasingCurveFunction.m */,
+				97287DD01BF5A6F00045EF98 /* ARAnimationFakeArray.h */,
+				97287DD11BF5A6F00045EF98 /* ARAnimationFakeArray.m */,
+				97287DD61BF5A6F00045EF98 /* ARInterpolation.h */,
+				97287DD71BF5A6F00045EF98 /* ArInterpolation.m */,
+			);
+			name = Private;
+			sourceTree = "<group>";
+		};
+		97287DE81BF5A99C0045EF98 /* Category */ = {
+			isa = PBXGroup;
+			children = (
 				97287DDA1BF5A6F00045EF98 /* CALayer+ARAnimation.h */,
 				97287DDB1BF5A6F00045EF98 /* CALayer+ARAnimation.m */,
 				97287DDC1BF5A6F00045EF98 /* UIView+ARAnimation.h */,
 				97287DDD1BF5A6F00045EF98 /* UIView+ARAnimation.m */,
 			);
-			name = Vendor;
+			name = Category;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
