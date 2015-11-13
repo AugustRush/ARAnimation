@@ -42,6 +42,11 @@ Or easily:
                       animations:(void (^)(void))animations
                       completion:(void (^)(void))completion;
 ---
+
++ (void)AR_animationWithDuration:(NSTimeInterval)duration
+                      animations:(void (^)(void))animations
+                      completion:(void (^)(void))completion;
+
 + (void)AR_animationWithDuration:(NSTimeInterval)duration
                            delay:(CFTimeInterval)delay
                       animations:(void (^)(void))animations
@@ -104,6 +109,30 @@ Or easily:
 
 ---------------------------------------
 
++ (void)AR_springAnimationWithDuration:(NSTimeInterval)duration
+                                 delay:(CFTimeInterval)delay
+                            animations:(void (^)(void))animations
+                            completion:(void (^)(void))completion;
+
++ (void)AR_springAnimationWithDuration:(NSTimeInterval)duration
+                                 delay:(CFTimeInterval)delay
+                                  mass:(CGFloat)mass
+                               damping:(CGFloat)damping
+                             stiffness:(CGFloat)stiffness
+                       initialVelocity:(CGFloat)initialVelocity
+                            animations:(void (^)(void))animations
+                            completion:(void (^)(void))completion;
+
++ (void)AR_springAnimationWithDuration:(NSTimeInterval)duration
+                                 delay:(CFTimeInterval)delay
+                           repeatCount:(NSUInteger)repeatCount
+                          autoreverses:(BOOL)autoreverses
+                                  mass:(CGFloat)mass
+                               damping:(CGFloat)damping
+                             stiffness:(CGFloat)stiffness
+                       initialVelocity:(CGFloat)initialVelocity
+                            animations:(void (^)(void))animations
+                            completion:(void (^)(void))completion;
 ```
  void(^animation4)(void) = ^{
         [self.view setNeedsLayout];
@@ -149,7 +178,7 @@ Or easily:
         self.yellowView.layer.rotation = -M_PI*4;
     } completion:animation1];
 
-````
+```
 
 ## Support Layer animatable propertys (version 0.5)
 * kARLayerPosition;
