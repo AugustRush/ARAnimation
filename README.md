@@ -42,6 +42,11 @@ Or easily:
                       animations:(void (^)(void))animations
                       completion:(void (^)(void))completion;
 ---
+
++ (void)AR_animationWithDuration:(NSTimeInterval)duration
+                      animations:(void (^)(void))animations
+                      completion:(void (^)(void))completion;
+
 + (void)AR_animationWithDuration:(NSTimeInterval)duration
                            delay:(CFTimeInterval)delay
                       animations:(void (^)(void))animations
@@ -102,8 +107,7 @@ Or easily:
 
 ![](https://github.com/AugustRush/ARAnimation/blob/master/rotaion.gif)
 
----------------------------------------
-
+-------------------------------
 ```
  void(^animation4)(void) = ^{
         [self.view setNeedsLayout];
@@ -149,7 +153,7 @@ Or easily:
         self.yellowView.layer.rotation = -M_PI*4;
     } completion:animation1];
 
-````
+```
 
 ## Support Layer animatable propertys (version 0.5)
 * kARLayerPosition;
