@@ -42,6 +42,7 @@ Or easily:
 ------------------
 ```
 //Basic
+
 + (void)AR_animationWithDuration:(NSTimeInterval)duration
                       animations:(void (^)(void))animations;
 
@@ -76,6 +77,7 @@ Or easily:
 
 ```
 //Spring
+
 + (void)AR_springAnimationWithDuration:(NSTimeInterval)duration
                             animations:(void (^)(void))animations;
 
@@ -163,6 +165,7 @@ Or easily:
 ```
 
 ## Support Layer animatable propertys (version 0.5)
+
 * **kARLayerPosition;**
 * **kARLayerPositionX;**
 * **kARLayerPositionY;**
