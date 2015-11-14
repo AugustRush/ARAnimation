@@ -10,6 +10,11 @@
 * __Custom TimingFunction(easing funtion)__
 * __Official style block Animations__
 
+## Install
+
+* **Cocoapods (will come soon)**
+* **Manually (just drag demo source ducument to your project)**
+
 # Usage
 
 * Example1 (Rotation)
@@ -36,14 +41,13 @@ Or easily:
 * Other convenient methods
 ------------------
 ```
-**// basic
+//Basic
 + (void)AR_animationWithDuration:(NSTimeInterval)duration
                       animations:(void (^)(void))animations;
----
+
 + (void)AR_animationWithDuration:(NSTimeInterval)duration
                       animations:(void (^)(void))animations
                       completion:(void (^)(void))completion;
----
 
 + (void)AR_animationWithDuration:(NSTimeInterval)duration
                       animations:(void (^)(void))animations
@@ -53,13 +57,13 @@ Or easily:
                            delay:(CFTimeInterval)delay
                       animations:(void (^)(void))animations
                       completion:(void (^)(void))completion;
----
+
 + (void)AR_animationWithDuration:(NSTimeInterval)duration
                            delay:(CFTimeInterval)delay
                           easing:(AREasingCurve)easing
                       animations:(void (^)(void))animations
                       completion:(void (^)(void))completion;
----
+
 + (void)AR_animationWithDuration:(NSTimeInterval)duration
                            delay:(CFTimeInterval)delay
                      repeatCount:(NSUInteger)repeatCount
@@ -67,12 +71,11 @@ Or easily:
                           easing:(AREasingCurve)easing
                       animations:(void (^)(void))animations
                       completion:(void (^)(void))completion;
-**
 ```
 ----------------------------------------
 
 ```
-**// spring
+//Spring
 + (void)AR_springAnimationWithDuration:(NSTimeInterval)duration
                             animations:(void (^)(void))animations;
 
@@ -104,7 +107,6 @@ Or easily:
                        initialVelocity:(CGFloat)initialVelocity
                             animations:(void (^)(void))animations
                             completion:(void (^)(void))completion;
-**
 ```
 
 ## Example
@@ -161,22 +163,36 @@ Or easily:
 ```
 
 ## Support Layer animatable propertys (version 0.5)
-* kARLayerPosition;
-* kARLayerPositionX;
-* kARLayerPositionY;
-* kARLayerCornerRadius;
-* kARLayerZPositoin;
-* kARLayerBorderWidth;
-* kARLayerScaleX;
-* kARLayerScaleY;
-* kARLayerScale;
-* kARLayerBounds;
-* kARLayerBackgroundColor;
-* kARLayerOpacity;
-* kARLayerRotationX;
-* kARLayerRotationY;
-* kARLayerRotation;
-* kARLayerAnchorPoint;
+* **kARLayerPosition;**
+* **kARLayerPositionX;**
+* **kARLayerPositionY;**
+* **kARLayerCornerRadius;**
+* ***kARLayerZPositoin;**
+* **kARLayerBorderWidth;**
+* **kARLayerScaleX;**
+* **kARLayerScaleY;**
+* **kARLayerScale;**
+* **kARLayerBounds;**
+* **kARLayerBackgroundColor;**
+* ***kARLayerOpacity;**
+* **kARLayerRotationX;**
+* **kARLayerRotationY;**
+* **kARLayerRotation;**
+* **kARLayerAnchorPoint;**
+
+## Reference
+
+* www.gizma.com/easing/#quad2
+* https://es.wikipedia.org/wiki/Oscilador_armónico
+* http://objccn.io/issue-12-4/
+* https://github.com/robb/RBBAnimation
+
+## Next
+
+* **Add cococapods support**
+* **More animatable layer's propertys**
+* **Custom animaton**
+* **Chainable animations ??**
 
 ## Licence
 
