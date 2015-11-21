@@ -88,7 +88,9 @@ ARInterpolation InterpolationForKeyPath(NSString *path) {
                  kARLayerRotationX:ARNumberInterpolation,
                  kARLayerRotationY:ARNumberInterpolation,
                  kARLayerRotation:ARNumberInterpolation,
-                 kARLayerAnchorPoint:ARPointInterpolation};
+                 kARLayerAnchorPoint:ARPointInterpolation,
+                 kARShapeLayerStrokeEnd:ARNumberInterpolation,
+                 kARShapeLayerStrokeStart:ARNumberInterpolation};
     });
     return dict[path];
 }

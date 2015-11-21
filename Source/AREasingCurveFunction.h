@@ -12,7 +12,8 @@ typedef CGFloat (^AREasingCurve)(CGFloat timePercentage);
 
 FOUNDATION_EXPORT AREasingCurve const kAREasingCurveLinear;
 FOUNDATION_EXPORT AREasingCurve const kAREasingCurveQuadratic;
-FOUNDATION_EXPORT AREasingCurve const kAREasingCurveCuARc;
+FOUNDATION_EXPORT AREasingCurve const kAREasingCurveEaseInCubic;
+FOUNDATION_EXPORT AREasingCurve const kAREasingCurveEaseOutCubic;
 FOUNDATION_EXPORT AREasingCurve const kAREasingCurveQuartic;
 FOUNDATION_EXPORT AREasingCurve const kAREasingCurveSine;
 FOUNDATION_EXPORT AREasingCurve const kAREasingCurveBackEaseIn;

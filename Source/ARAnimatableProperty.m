@@ -24,6 +24,9 @@ NSString * const kARLayerRotationX = @"transform.rotation.x";
 NSString * const kARLayerRotationY = @"transform.rotation.y";
 NSString * const kARLayerRotation = @"transform.rotation";
 NSString * const kARLayerAnchorPoint = @"anchorPoint";
+NSString * const kARShapeLayerStrokeEnd = @"strokeEnd";
+NSString * const kARShapeLayerStrokeStart = @"strokeStart";
+
 
 
 NSArray *ARAllAnimatablePropertys() {
@@ -42,7 +45,9 @@ NSArray *ARAllAnimatablePropertys() {
              @"transform.rotation.x",
              @"transform.rotation.y",
              @"transform.rotation",
-             @"anchorPoint"];
+             @"anchorPoint",
+             @"strokeEnd",
+             @"strokeStart"];
 }
 
 NSString *ARLayerActionEventStoreKey(NSString *event) {
@@ -64,7 +69,9 @@ NSString *ARLayerActionEventStoreKey(NSString *event) {
                  @"transform.rotation.x":@"transformRotationX",
                  @"transform.rotation.y":@"transformRotationY",
                  @"transform.rotation":@"transformRotation",
-                 @"anchorPoint":@"anchorPoint"};
+                 @"anchorPoint":@"anchorPoint",
+                 @"strokeEnd":@"strokeEnd",
+                 @"strokeStart":@"strokeStart"};
     });
     
     return dict[event];

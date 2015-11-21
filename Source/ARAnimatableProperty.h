@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
+//CALayer
 FOUNDATION_EXPORT NSString * const kARLayerPosition;
 FOUNDATION_EXPORT NSString * const kARLayerPositionX;
 FOUNDATION_EXPORT NSString * const kARLayerPositionY;
@@ -24,7 +25,9 @@ FOUNDATION_EXPORT NSString * const kARLayerRotationX;
 FOUNDATION_EXPORT NSString * const kARLayerRotationY;
 FOUNDATION_EXPORT NSString * const kARLayerRotation;
 FOUNDATION_EXPORT NSString * const kARLayerAnchorPoint;
-
+//CAShapeLayer
+FOUNDATION_EXPORT NSString * const kARShapeLayerStrokeEnd;
+FOUNDATION_EXPORT NSString * const kARShapeLayerStrokeStart;
 
 NSArray *ARAllAnimatablePropertys();
 

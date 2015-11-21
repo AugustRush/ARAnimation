@@ -11,4 +11,11 @@
 
 typedef id (^ARInterpolation)(id from, id to, CGFloat time, AREasingCurve easing);
 
+/**
+ *  @brief  get the special interpolation for keyPath
+ *
+ *  @param path animatable keyPath of ARAnimation
+ *
+ *  @return the Interpolation
+ */
 ARInterpolation InterpolationForKeyPath(NSString *path);

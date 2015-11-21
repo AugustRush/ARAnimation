@@ -16,8 +16,12 @@ AREasingCurve const kAREasingCurveQuadratic = ^CGFloat(CGFloat t){
     return t * t;
 };
 
-AREasingCurve const kAREasingCurveCuARc = ^CGFloat(CGFloat t){
+AREasingCurve const kAREasingCurveEaseInCubic = ^CGFloat(CGFloat t){
     return t * t * t;
+};
+
+AREasingCurve const kAREasingCurveEaseOutCubic = ^CGFloat(CGFloat t){
+    return pow(t - 1, 3) + 1;;
 };
 
 AREasingCurve const kAREasingCurveQuartic = ^CGFloat(CGFloat t){

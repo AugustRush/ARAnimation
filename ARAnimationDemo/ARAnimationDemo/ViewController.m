@@ -13,6 +13,7 @@
 
 @property (nonatomic, weak) IBOutlet UIView *redView;
 @property (nonatomic, weak) IBOutlet UIView *yellowView;
+@property (nonatomic, strong) CAShapeLayer *shapeLayer;
 
 @end
 
@@ -23,6 +24,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    self.shapeLayer = [CAShapeLayer layer];
+    self.shapeLayer.frame = self.view.bounds;
+    self.shapeLayer.fillColor = [UIColor clearColor].CGColor;
+    self.shapeLayer.strokeColor = [UIColor greenColor].CGColor;
+    self.shapeLayer.lineWidth = 2;
+    [self.view.layer addSublayer:self.shapeLayer];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -67,14 +74,22 @@
 }
 
 - (void)multipleViewAnimations {
-    
+    void(^animation5)(void) = ^{
+        self.shapeLayer.path = [UIBezierPath bezierPathWithRect:CGRectMake(100, 100, 100, 100)].CGPath;
+        ARBasicAnimation *strokeEnd = [ARBasicAnimation animationWithKeyPath:kARShapeLayerStrokeEnd];
+        strokeEnd.fromValue = @0;
+        strokeEnd.toValue = @1;
+        strokeEnd.duration =2;
+        strokeEnd.easing = kAREasingCurveBounceInOut;
+        [self.shapeLayer addAnimation:strokeEnd forKey:nil];
+        self.shapeLayer.strokeEnd = 1;
+    };
+
     void(^animation4)(void) = ^{
         [self.view setNeedsLayout];
         [UIView AR_animationWithDuration:0.5 delay:0.0 easing:kAREasingCurveBounceOut animations:^{
             [self.view layoutIfNeeded];
-        } completion:^{
-            NSLog(@"all animations completion");
-        }];
+        } completion:animation5];
     };
     
     void(^animation3)(void) = ^{
