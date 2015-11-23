@@ -166,22 +166,24 @@ Or easily:
 
 ## Support Layer animatable propertys (version 0.5)
 
-* **kARLayerPosition;**
-* **kARLayerPositionX;**
-* **kARLayerPositionY;**
-* **kARLayerCornerRadius;**
-* **kARLayerZPositoin;**
-* **kARLayerBorderWidth;**
-* **kARLayerScaleX;**
-* **kARLayerScaleY;**
-* **kARLayerScale;**
-* **kARLayerBounds;**
-* **kARLayerBackgroundColor;**
-* ***kARLayerOpacity;**
-* **kARLayerRotationX;**
-* **kARLayerRotationY;**
-* **kARLayerRotation;**
-* **kARLayerAnchorPoint;**
+* **kARLayerPosition**
+* **kARLayerPositionX**
+* **kARLayerPositionY**
+* **kARLayerCornerRadius**
+* **kARLayerZPositoin**
+* **kARLayerBorderWidth**
+* **kARLayerScaleX**
+* **kARLayerScaleY**
+* **kARLayerScale**
+* **kARLayerBounds**
+* **kARLayerBackgroundColor**
+* **kARLayerOpacity**
+* **kARLayerRotationX**
+* **kARLayerRotationY**
+* **kARLayerRotation**
+* **kARLayerAnchorPoint**
+* **kARShapeLayerStrokeEnd**
+* **kARShapeLayerStrokeStart**
 
 ## Reference
 
