@@ -3,7 +3,7 @@
 *___ARAnimation is an Core Animation library to make you animations easily.___*
 
 
-## Features (version 0.5)
+## Features
 
 * __Layer animations__
 * __Layer Spring Animations__
@@ -12,8 +12,11 @@
 
 ## Install
 
-* **Cocoapods (will come soon)**
-* **Manually (just drag demo source ducument to your project)**
+#### Cocoapods 
+* **pod 'ARAnimation'**
+
+#### Manually
+* **just drag demo source ducument to your project**
 
 # Usage
 
