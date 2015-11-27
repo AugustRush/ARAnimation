@@ -20,24 +20,15 @@
 
 # Usage
 
-* Example1 (Rotation)
+* Example1
 
 ![](https://github.com/AugustRush/ARAnimation/blob/master/ex1.gif)
 --------------------------------------
 ```
-ARBasicAnimation *rotationAnimation = [ARBasicAnimation animationWithKeyPath:kARLayerRotation];
-rotationAnimation.fromValue = @0;
-rotationAnimation.toValue = @10;
-[self.redView.layer addAnimation:rotationAnimation forKey:nil];
-[self.yellowView.layer addAnimation:rotationAnimation forKey:nil];
-
-```
-Or easily:
-```
-[UIView AR_animationWithDuration:1.0
+[UIView AR_animationWithDuration:2.0
                           animations:^{
-                              self.redView.layer.rotation = 10;
-                              self.yellowView.layer.rotation = -10;
+                              self.redView.layer.rotation = M_PI*10;
+                              self.redView.layer.cornerRadius = 50;
                           }];
 
 ```

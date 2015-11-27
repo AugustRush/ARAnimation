@@ -40,37 +40,20 @@
 #pragma mark - ==
 
 - (IBAction)buttonClicked:(id)sender {
-    [self multipleViewAnimations];
+//    [self multipleViewAnimations];
     
-//    [self rotationAnimation];
+    [self rotationAnimation];
 }
 
 #pragma mark - --
 
 - (void)rotationAnimation {
     
-    ARBasicAnimation *rotationAnimation = [ARBasicAnimation animationWithKeyPath:kARLayerRotation];
-    rotationAnimation.fromValue = @0;
-    rotationAnimation.toValue = @10;
-    [self.redView.layer addAnimation:rotationAnimation forKey:nil];
-    [self.yellowView.layer addAnimation:rotationAnimation forKey:nil];
-    
-    [UIView AR_animationWithDuration:1.0
-                          animations:^{
-                              self.redView.layer.rotation = 10;
-                              self.yellowView.layer.rotation = -10;
-                          }];
-   
-   
     [UIView AR_animationWithDuration:2.0
-                               delay:1
-                              easing:^CGFloat(CGFloat timePercentage) {
-                                  return timePercentage * timePercentage;
-                              } animations:^{
-                                  self.redView.backgroundColor = [UIColor blackColor];
-                              } completion:^{
-                               //your code
-                              }];
+                          animations:^{
+                              self.redView.layer.rotation = M_PI*10;
+                              self.redView.layer.cornerRadius = 50;
+                          }];
 }
 
 - (void)multipleViewAnimations {
