@@ -1,4 +1,4 @@
-# ARAnimation
+# ![](https://github.com/AugustRush/ARAnimation/blob/develop/title.png)
 
 *___ARAnimation is an Core Animation library to make you animations easily.___*
 
@@ -41,7 +41,7 @@ Or easily:
 
 ```
 
-* Other convenient methods
+Other convenient methods
 ------------------
 ```
 //Basic
