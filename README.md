@@ -20,7 +20,7 @@
 
 # Usage
 
-* Example1
+## Example1
 
 ![](https://github.com/AugustRush/ARAnimation/blob/master/ex1.gif)
 --------------------------------------
