@@ -41,7 +41,7 @@ Or easily:
 
 ```
 
-* Other convenient methods
+Other convenient methods
 ------------------
 ```
 //Basic
