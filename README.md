@@ -44,7 +44,7 @@ Or easily:
 Other convenient methods
 ------------------
 ```
-//Basic
+###Basic
 
 + (void)AR_animationWithDuration:(NSTimeInterval)duration
                       animations:(void (^)(void))animations;
@@ -79,7 +79,7 @@ Other convenient methods
 ----------------------------------------
 
 ```
-//Spring
+###Spring
 
 + (void)AR_springAnimationWithDuration:(NSTimeInterval)duration
                             animations:(void (^)(void))animations;
