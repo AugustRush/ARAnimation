@@ -21,8 +21,9 @@
 # Usage
 
 * Example1 (Rotation)
--------------------
- Basic:
+
+![](https://github.com/AugustRush/ARAnimation/blob/master/ex1.gif)
+--------------------------------------
 ```
 ARBasicAnimation *rotationAnimation = [ARBasicAnimation animationWithKeyPath:kARLayerRotation];
 rotationAnimation.fromValue = @0;
@@ -41,80 +42,7 @@ Or easily:
 
 ```
 
-Other convenient methods
-------------------
-```
-###Basic
-
-+ (void)AR_animationWithDuration:(NSTimeInterval)duration
-                      animations:(void (^)(void))animations;
-
-+ (void)AR_animationWithDuration:(NSTimeInterval)duration
-                      animations:(void (^)(void))animations
-                      completion:(void (^)(void))completion;
-
-+ (void)AR_animationWithDuration:(NSTimeInterval)duration
-                      animations:(void (^)(void))animations
-                      completion:(void (^)(void))completion;
-
-+ (void)AR_animationWithDuration:(NSTimeInterval)duration
-                           delay:(CFTimeInterval)delay
-                      animations:(void (^)(void))animations
-                      completion:(void (^)(void))completion;
-
-+ (void)AR_animationWithDuration:(NSTimeInterval)duration
-                           delay:(CFTimeInterval)delay
-                          easing:(AREasingCurve)easing
-                      animations:(void (^)(void))animations
-                      completion:(void (^)(void))completion;
-
-+ (void)AR_animationWithDuration:(NSTimeInterval)duration
-                           delay:(CFTimeInterval)delay
-                     repeatCount:(NSUInteger)repeatCount
-                    autoreverses:(BOOL)autoreverses
-                          easing:(AREasingCurve)easing
-                      animations:(void (^)(void))animations
-                      completion:(void (^)(void))completion;
-```
-----------------------------------------
-
-```
-###Spring
-
-+ (void)AR_springAnimationWithDuration:(NSTimeInterval)duration
-                            animations:(void (^)(void))animations;
-
-+ (void)AR_springAnimationWithDuration:(NSTimeInterval)duration
-                            animations:(void (^)(void))animations
-                            completion:(void (^)(void))completion;
-
-+ (void)AR_springAnimationWithDuration:(NSTimeInterval)duration
-                                 delay:(CFTimeInterval)delay
-                            animations:(void (^)(void))animations
-                            completion:(void (^)(void))completion;
-
-+ (void)AR_springAnimationWithDuration:(NSTimeInterval)duration
-                                 delay:(CFTimeInterval)delay
-                                  mass:(CGFloat)mass
-                               damping:(CGFloat)damping
-                             stiffness:(CGFloat)stiffness
-                       initialVelocity:(CGFloat)initialVelocity
-                            animations:(void (^)(void))animations
-                            completion:(void (^)(void))completion;
-
-+ (void)AR_springAnimationWithDuration:(NSTimeInterval)duration
-                                 delay:(CFTimeInterval)delay
-                           repeatCount:(NSUInteger)repeatCount
-                          autoreverses:(BOOL)autoreverses
-                                  mass:(CGFloat)mass
-                               damping:(CGFloat)damping
-                             stiffness:(CGFloat)stiffness
-                       initialVelocity:(CGFloat)initialVelocity
-                            animations:(void (^)(void))animations
-                            completion:(void (^)(void))completion;
-```
-
-## Example
+## Example2 (Multistep animations block Nested)
 
 ![](https://github.com/AugustRush/ARAnimation/blob/master/rotaion.gif)
 
@@ -165,6 +93,79 @@ Other convenient methods
         self.yellowView.layer.rotation = -M_PI*4;
     } completion:animation1];
 
+```
+
+
+
+## Official block style
+
+####Basic
+```
++ (void)AR_animationWithDuration:(NSTimeInterval)duration
+                      animations:(void (^)(void))animations;
+
++ (void)AR_animationWithDuration:(NSTimeInterval)duration
+                      animations:(void (^)(void))animations
+                      completion:(void (^)(void))completion;
+
++ (void)AR_animationWithDuration:(NSTimeInterval)duration
+                      animations:(void (^)(void))animations
+                      completion:(void (^)(void))completion;
+
++ (void)AR_animationWithDuration:(NSTimeInterval)duration
+                           delay:(CFTimeInterval)delay
+                      animations:(void (^)(void))animations
+                      completion:(void (^)(void))completion;
+
++ (void)AR_animationWithDuration:(NSTimeInterval)duration
+                           delay:(CFTimeInterval)delay
+                          easing:(AREasingCurve)easing
+                      animations:(void (^)(void))animations
+                      completion:(void (^)(void))completion;
+
++ (void)AR_animationWithDuration:(NSTimeInterval)duration
+                           delay:(CFTimeInterval)delay
+                     repeatCount:(NSUInteger)repeatCount
+                    autoreverses:(BOOL)autoreverses
+                          easing:(AREasingCurve)easing
+                      animations:(void (^)(void))animations
+                      completion:(void (^)(void))completion;
+```
+----------------------------------------
+
+#### Spring
+```
++ (void)AR_springAnimationWithDuration:(NSTimeInterval)duration
+                            animations:(void (^)(void))animations;
+
++ (void)AR_springAnimationWithDuration:(NSTimeInterval)duration
+                            animations:(void (^)(void))animations
+                            completion:(void (^)(void))completion;
+
++ (void)AR_springAnimationWithDuration:(NSTimeInterval)duration
+                                 delay:(CFTimeInterval)delay
+                            animations:(void (^)(void))animations
+                            completion:(void (^)(void))completion;
+
++ (void)AR_springAnimationWithDuration:(NSTimeInterval)duration
+                                 delay:(CFTimeInterval)delay
+                                  mass:(CGFloat)mass
+                               damping:(CGFloat)damping
+                             stiffness:(CGFloat)stiffness
+                       initialVelocity:(CGFloat)initialVelocity
+                            animations:(void (^)(void))animations
+                            completion:(void (^)(void))completion;
+
++ (void)AR_springAnimationWithDuration:(NSTimeInterval)duration
+                                 delay:(CFTimeInterval)delay
+                           repeatCount:(NSUInteger)repeatCount
+                          autoreverses:(BOOL)autoreverses
+                                  mass:(CGFloat)mass
+                               damping:(CGFloat)damping
+                             stiffness:(CGFloat)stiffness
+                       initialVelocity:(CGFloat)initialVelocity
+                            animations:(void (^)(void))animations
+                            completion:(void (^)(void))completion;
 ```
 
 ## Support Layer animatable propertys (version 0.5)
