@@ -13,7 +13,7 @@
 ## Install
 
 #### Cocoapods 
-* **pod 'ARAnimation'**
+* **pod 'ARAnimation',:git => "https://github.com/AugustRush/ARAnimation.git"**
 
 #### Manually
 * **just drag demo source ducument to your project**
@@ -157,7 +157,7 @@
                             completion:(void (^)(void))completion;
 `
 
-## Support Layer animatable propertys (version 0.5)
+## Support Layer animatable propertys
 
 * **kARLayerPosition**
 * **kARLayerPositionX**
@@ -187,10 +187,13 @@
 
 ## Next
 
-* ~~Add cococapods support~~
 * **More animatable layer's propertys**
-* **Custom animaton**
+* **Custom animaton ??**
 * **Chainable animations ??**
+
+## Supplement
+
+* **Please email me if you have any idea ‘liupingwei30@gmail.com’**
 
 ## Licence
 
