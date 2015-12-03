@@ -24,14 +24,13 @@
 
 ![](https://github.com/AugustRush/ARAnimation/blob/master/ex1.gif)
 --------------------------------------
-`
+```
 [UIView AR_animationWithDuration:2.0
                           animations:^{
                               self.redView.layer.rotation = M_PI*10;
                               self.redView.layer.cornerRadius = 50;
                           }];
-
-`
+```
 
 ## Example2 (Multistep animations block Nested)
 
@@ -39,7 +38,7 @@
 
 ---------------------------------------
 
-`
+```
  void(^animation4)(void) = ^{
         [self.view setNeedsLayout];
         [UIView AR_animationWithDuration:0.5 delay:0.0 easing:kAREasingCurveBounceOut animations:^{
@@ -83,13 +82,12 @@
         self.redView.layer.rotation = M_PI*4;
         self.yellowView.layer.rotation = -M_PI*4;
     } completion:animation1];
-
-`
+```
 
 ## Official block style
 
 ####Basic
-`
+```
 + (void)AR_animationWithDuration:(NSTimeInterval)duration
                       animations:(void (^)(void))animations;
 
@@ -119,11 +117,11 @@
                           easing:(AREasingCurve)easing
                       animations:(void (^)(void))animations
                       completion:(void (^)(void))completion;
-`
+```
 ----------------------------------------
 
 #### Spring
-`
+```
 + (void)AR_springAnimationWithDuration:(NSTimeInterval)duration
                             animations:(void (^)(void))animations;
 
@@ -155,7 +153,7 @@
                        initialVelocity:(CGFloat)initialVelocity
                             animations:(void (^)(void))animations
                             completion:(void (^)(void))completion;
-`
+```
 
 ## Support Layer animatable propertys
 
