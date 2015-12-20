@@ -9,7 +9,6 @@
 #import <QuartzCore/QuartzCore.h>
 #import <UIKit/UIKit.h>
 
-@class ARAnimationMaker;
 @interface CALayer (ARAnimation)
 
 @property (nonatomic, assign) CGFloat scaleX;
