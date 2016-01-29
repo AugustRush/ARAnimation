@@ -23,8 +23,6 @@
 		97287E021BF5DAA70045EF98 /* ARSpringAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 97287DF81BF5DAA70045EF98 /* ARSpringAnimation.m */; };
 		97287E031BF5DAA70045EF98 /* CALayer+ARAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 97287DFA1BF5DAA70045EF98 /* CALayer+ARAnimation.m */; };
 		97287E041BF5DAA70045EF98 /* UIView+ARAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 97287DFC1BF5DAA70045EF98 /* UIView+ARAnimation.m */; };
-		97C23ACA1C2EDAAB00D5189D /* ARAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C23AC91C2EDAAB00D5189D /* ARAnimator.m */; };
-		97C23ACD1C2EDB2B00D5189D /* ARCustomAnimation.m in Sources */ = {isa = PBXBuildFile; fileRef = 97C23ACC1C2EDB2B00D5189D /* ARCustomAnimation.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,10 +76,6 @@
 		97287DFA1BF5DAA70045EF98 /* CALayer+ARAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "CALayer+ARAnimation.m"; path = "../../Source/CALayer+ARAnimation.m"; sourceTree = "<group>"; };
 		97287DFB1BF5DAA70045EF98 /* UIView+ARAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIView+ARAnimation.h"; path = "../../Source/UIView+ARAnimation.h"; sourceTree = "<group>"; };
 		97287DFC1BF5DAA70045EF98 /* UIView+ARAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIView+ARAnimation.m"; path = "../../Source/UIView+ARAnimation.m"; sourceTree = "<group>"; };
-		97C23AC81C2EDAAB00D5189D /* ARAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARAnimator.h; sourceTree = "<group>"; };
-		97C23AC91C2EDAAB00D5189D /* ARAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARAnimator.m; sourceTree = "<group>"; };
-		97C23ACB1C2EDB2B00D5189D /* ARCustomAnimation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ARCustomAnimation.h; sourceTree = "<group>"; };
-		97C23ACC1C2EDB2B00D5189D /* ARCustomAnimation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ARCustomAnimation.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,7 +170,6 @@
 			isa = PBXGroup;
 			children = (
 				97287DEE1BF5DAA70045EF98 /* ARAnimation.h */,
-				97C23AC71C2EDA7400D5189D /* Animator */,
 				97287DE81BF5A99C0045EF98 /* Category */,
 				97287DE71BF5A97A0045EF98 /* Private */,
 				97287DE61BF5A9500045EF98 /* Animations */,
@@ -191,8 +184,6 @@
 				97287DF21BF5DAA70045EF98 /* ARBasicAnimation.m */,
 				97287DF71BF5DAA70045EF98 /* ARSpringAnimation.h */,
 				97287DF81BF5DAA70045EF98 /* ARSpringAnimation.m */,
-				97C23ACB1C2EDB2B00D5189D /* ARCustomAnimation.h */,
-				97C23ACC1C2EDB2B00D5189D /* ARCustomAnimation.m */,
 			);
 			name = Animations;
 			sourceTree = "<group>";
@@ -221,15 +212,6 @@
 				97287DFC1BF5DAA70045EF98 /* UIView+ARAnimation.m */,
 			);
 			name = Category;
-			sourceTree = "<group>";
-		};
-		97C23AC71C2EDA7400D5189D /* Animator */ = {
-			isa = PBXGroup;
-			children = (
-				97C23AC81C2EDAAB00D5189D /* ARAnimator.h */,
-				97C23AC91C2EDAAB00D5189D /* ARAnimator.m */,
-			);
-			name = Animator;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,7 +345,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				97287E001BF5DAA70045EF98 /* AREasingCurveFunction.m in Sources */,
-				97C23ACA1C2EDAAB00D5189D /* ARAnimator.m in Sources */,
 				97287E021BF5DAA70045EF98 /* ARSpringAnimation.m in Sources */,
 				97287D9D1BF590CD0045EF98 /* ViewController.m in Sources */,
 				97287D9A1BF590CD0045EF98 /* AppDelegate.m in Sources */,
@@ -374,7 +355,6 @@
 				97287DFE1BF5DAA70045EF98 /* ARAnimationFakeArray.m in Sources */,
 				97287E041BF5DAA70045EF98 /* UIView+ARAnimation.m in Sources */,
 				97287E031BF5DAA70045EF98 /* CALayer+ARAnimation.m in Sources */,
-				97C23ACD1C2EDB2B00D5189D /* ARCustomAnimation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

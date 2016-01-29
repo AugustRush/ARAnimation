@@ -40,9 +40,9 @@
 #pragma mark - ==
 
 - (IBAction)buttonClicked:(id)sender {
-    [self multipleViewAnimations];
+//    [self multipleViewAnimations];
     
-//    [self rotationAnimation];
+    [self rotationAnimation];
 }
 
 #pragma mark - --

@@ -8,16 +8,7 @@
 
 #import "AREasingCurveFunction.h"
 #import "ARAnimatableProperty.h"
-/**
- *  @brief an interpolation block for caculate animation process value
- *
- *  @param from   from value
- *  @param to     to value
- *  @param time   current time (0-1)
- *  @param easing animation easing curve
- *
- *  @return process value
- */
+
 typedef id (^ARInterpolation)(id from, id to, CGFloat time, AREasingCurve easing);
 
 /**
