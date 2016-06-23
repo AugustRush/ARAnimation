@@ -14,6 +14,7 @@
 @property (nonatomic, weak) IBOutlet UIView *redView;
 @property (nonatomic, weak) IBOutlet UIView *yellowView;
 @property (nonatomic, strong) CAShapeLayer *shapeLayer;
+@property (weak, nonatomic) IBOutlet UIView *ball;
 
 @end
 
@@ -42,10 +43,26 @@
 - (IBAction)buttonClicked:(id)sender {
 //    [self multipleViewAnimations];
     
-    [self rotationAnimation];
+//    [self rotationAnimation];
+    [self ortationAndMoveX];
 }
 
 #pragma mark - --
+
+- (void)ortationAndMoveX {
+    CGFloat x = _ball.layer.position.x;
+    CGFloat y = _ball.layer.position.y;
+    [UIView AR_animationWithDuration:1 animations:^{
+        _ball.layer.rotation = 4;
+        _ball.layer.position = CGPointMake(x+100, y);
+    } completion:^{
+        CGFloat x1 = _ball.layer.position.x;
+        [UIView AR_animationWithDuration:1 delay:0 easing:kAREasingCurveBounceOut animations:^{
+            _ball.layer.rotation = -4;
+            _ball.layer.position = CGPointMake(x1-100, y);
+        } completion:nil];
+    }];
+}
 
 - (void)rotationAnimation {
     
